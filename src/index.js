@@ -3,8 +3,11 @@ const me = {
   age: 20
 };
 
-const { name, age } = me;
+// const { name, age } = me;
 
-const message = `Iam${name}, ${age}`;
+// const message = `Iam${name}`;
 
-console.log(message);
+const sayHello = (name = "jin") => {
+  return console.log(`Iam${name}`);
+};
+sayHello("akira");
