@@ -26,3 +26,10 @@ console.log(arr1);
 console.log(num1);
 // console.log(num2)
 console.log(arr2);
+
+const arr3 = [6, 7, 8, 9, 10];
+const arr4 = [...arr3];
+console.log(arr4);
+
+const arr5 = [arr1, arr3[0], ...arr2];
+console.log(arr5);
