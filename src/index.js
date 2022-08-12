@@ -1,63 +1,41 @@
-// const me = {
-//   name: "jin",
-//   age: 20
-// };
+import "./styles.css";
 
-// const { name, age } = me;
+const onclickAdd = () => {
+  //テキストボックスの値を取得し初期化
+  const inputText = document.getElementById("add-text").value;
+  document.getElementById("add-text").value = "";
 
-// const message = `Iam${name}`;
+  //div生成
+  const div = document.createElement("div");
+  div.className = "list-row";
 
-// const sayHello = (name = "jin") => {
-//   return console.log(`Iam${name}`);
-// };
-// sayHello("akira");
+  //liタグ作成
+  const li = document.createElement("li");
+  li.innerText = inputText;
 
-// const arr1 = [1, 2, 3, 4, 5];
-// console.log(arr1);
-// console.log(...arr1);
+  //完了button生成
+  const completeButton = document.createElement("button");
+  completeButton.innerText = "完了";
+  completeButton.addEventListener("click", () => {});
 
-// const sumFunc = (num1, num2) => {
-//   return console.log(num1 + num2);
-// };
-// sumFunc(...arr1);
+  //削除button生成
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", () => {
+    //推された削除ボタンの親タグ(div)を未完了リストから削除
+    const deleteTaret = deleteButton.parentNode;
+    document.getElementById("incomplete-list").removeChild(deleteTaret);
+  });
 
-// const [num1, ...arr2] = arr1;
-// console.log(arr1);
-// console.log(num1);
-// // console.log(num2)
-// console.log(arr2);
+  //divタグの子要素に各要素の設定
+  div.appendChild(li);
+  div.appendChild(completeButton);
+  div.appendChild(deleteButton);
 
-// const arr3 = [6, 7, 8, 9, 10];
-// const arr4 = [...arr3];
-// console.log(arr4);
+  //未完了リストに追加
+  document.getElementById("incomplete-list").appendChild(div);
+};
 
-// const arr5 = [arr1, arr3[0], ...arr2];
-// console.log(arr5);
-
-// const nameArr = ["じん", "山田", "中村"];
-// for (let index = 0; index < nameArr.length; index++) {
-//   console.log(`${index + 1}番目は${nameArr[index]}です`)
-// }
-
-// const nameArr2 = nameArr.map((name) => {
-//   return name;
-// });
-
-// console.log(nameArr2)
-
-// nameArr.map((name) => console.log(`${name}です`))
-
-// const numArr = [1, 2, 3, 4, 5];
-// const newNumArr = numArr.filter((num) => {
-//   return num % 2 === 1;
-// });
-// console.log(newNumArr)
-
-// const newNameArr = nameArr.map((name) => {
-//   if (name === "じん") {
-//     return name;
-//   } else {
-//     return `${name}さん`;
-//   }
-// });
-// console.log(newNameArr);
+document
+  .getElementById("add-button")
+  .addEventListener("click", () => onclickAdd());
