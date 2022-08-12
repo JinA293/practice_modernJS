@@ -34,7 +34,7 @@
 // const arr5 = [arr1, arr3[0], ...arr2];
 // console.log(arr5);
 
-const nameArr = ["じん", "山田", "中村"];
+// const nameArr = ["じん", "山田", "中村"];
 // for (let index = 0; index < nameArr.length; index++) {
 //   console.log(`${index + 1}番目は${nameArr[index]}です`)
 // }
@@ -53,11 +53,11 @@ const nameArr = ["じん", "山田", "中村"];
 // });
 // console.log(newNumArr)
 
-const newNameArr = nameArr.map((name) => {
-  if (name === "じん") {
-    return name;
-  } else {
-    return `${name}さん`;
-  }
-});
-console.log(newNameArr);
+// const newNameArr = nameArr.map((name) => {
+//   if (name === "じん") {
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// });
+// console.log(newNameArr);
